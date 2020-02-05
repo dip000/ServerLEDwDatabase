@@ -1,0 +1,43 @@
+/*
+*   Example of: MQTT with SSL - Websockets
+*   This document is not intended to be a resource to be called but a copy-paste resource for didactict purposes.
+*   This is an example of using the interactive console to send messages and perform commands such as LEDon, LEDoff, shut, con, ...
+*   
+*   Uses 4 resources; jQuery (external), MQTTPaho (external), MQTTSSL.js (internal) and ConsoleBasicStyle (internal, optional).
+*
+*   Aditional information about the project:
+*   Uses a broker from cloudmqtt.com which serves from AWS. The final service by mqttcloud.com offers a free
+*     version with up to 5 simultaneous connections and limited transfer speed (but hey! it´s free AND secure,
+*     as a reference take mosquitto.org secure ports and see if it´s easier, it´s not).
+*   Doesn´t use cookies as the Phone version (in this same directory).
+*/
+
+<!DOCTYPE html>
+<html><meta charset="UTF-8">
+    <head>
+	    <title>MQTT</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://dip000.github.io/ServerLEDwDatabase/MQTTSSL.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://dip000.github.io/ServerLEDwDatabase/ConsoleBasicStyle.css"></link>
+	
+	</head>
+	<body style="background-color:#F5F5F5">
+		<div><p>MQTTServerLEDwDatabase</p></div>
+		<br>
+		<div id="webConsole">
+			<div class="webConsoleContent">
+				<span style="font-size:8px">Web Console 1.0 by 3Dip.es.tl</span>
+				<span id="btnHideWarn">HideWarn</span>
+			</div>
+			<div style="font-size:2px">&nbsp; </div>
+			<div class="webConsoleContent">
+				<div id="consoleOutput"></div>
+				<input class="smallInput" id="inputID" type="text" value="ID"></input>
+				<input class="mediumInput" id="inputCmd" type="text"></input>
+				<input onclick="command( $('#inputCmd').val() , $('#inputID').val());" id="btnCmd" type="button" value="Do"></input>
+			</div>
+		</div>
+		<br>
+	</body>
+</html>
