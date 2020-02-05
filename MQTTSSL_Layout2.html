@@ -1,0 +1,52 @@
+/*
+*   Example2 of: a MQTT SSL - Websockets
+*
+*
+*
+*/
+
+
+<!DOCTYPE html>
+<html><meta charset="UTF-8">
+    <head>
+      
+      <title>MQTT</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://dip000.github.io/ServerLEDwDatabase/MQTTSSL.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://dip000.github.io/ServerLEDwDatabase/ConsoleBasicStyle.css"></link>
+	
+		<script>
+			var LEDstate = false;
+	
+			function toggle(){
+				if(connectionState === true){
+					if(LEDstate === true){
+						$("#btnToggle").attr("src","https://img.webme.com/pic/3/3dip/button_red.png");
+						command( 'LEDoff' , $('#inputID').val());
+					}
+					else{
+						$("#btnToggle").attr("src","https://img.webme.com/pic/3/3dip/button_green.png");
+						command( 'LEDon' , $('#inputID').val());
+					}
+					LEDstate = !LEDstate;
+					console.log("LED: "+LEDstate+". ID: "+$('#inputID').val());
+
+				} else {
+					command( 'ok' , $('#inputID').val());
+				}
+			}
+		</script>
+		
+	</head>
+	<body style="background-color:#333333">
+	
+		<center>
+			<div id="consoleOutput" style="display:none;"></div>
+			<input class="smallInput" id="inputID" type="text" value="ID"></input>
+			<br>
+			<img id="btnToggle" src="button_red.png" onclick="toggle()"> </img>
+		</center>
+		
+	</body>
+</html>
