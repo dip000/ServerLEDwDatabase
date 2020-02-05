@@ -1,0 +1,66 @@
+/*
+*   Simplistic Style For The MQTT with SSL Console
+*   Why not having style, right?
+*
+*   Doesn´t Use any External Resource
+*/
+
+		#webConsole{
+			display:block;
+			position: relative;
+			width:185px;
+			height:210;
+		}
+		.smallInput{
+			width:40px;
+		}
+		.mediumInput{
+			width:85px;
+		}
+		#btnHideWarn{
+			position:absolute;
+			right:5px;
+			top: 5px;
+			font-size:10px;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+		
+		#consoleOutput{
+			width:180px;
+			height:200px;
+			overflow-y:auto;
+			word-wrap: break-word;
+		}
+		
+		.webConsoleContent{
+			display: block;
+			background-color: white;
+			border: 1px solid lightgray;
+		}
+		
+		.consoleMsg{
+			width:100%;
+			min-height:22px;
+			font-size:15px;
+			display:block;
+			box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+		}	
+			.consoleMsg.noMsg{
+				background-color:FireBrick;
+				color:white;
+			}
+			.consoleMsg.yesMsg{
+				background-color:steelBlue;
+				color:white;
+			}
+			.consoleMsg.warnMsg{
+				background-color:lightgray;
+				color:charcoal;
+			}
+		
+		.consoleStylebar{
+			height:15;
+			width:5px;
+			background-color:lime;
+		}
