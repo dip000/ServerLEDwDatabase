@@ -68,11 +68,11 @@
 				else{
 					sendConsoleMsg("Incorrect ID","noMsg");
 				}
-			});
+			}
 			
 			$("#btnHideWarn").click(function(){
 				hideWarnings = !hideWarnings;
-			)
+			});
 
 			
 			function sendConsoleMsg(msg, type){
@@ -117,7 +117,7 @@
 				message = new Paho.MQTT.Message(msg);
 				message.destinationName = topic;
 				client.send(message);
-            }
+           		 }
 			
 
 			function onConnect() {
