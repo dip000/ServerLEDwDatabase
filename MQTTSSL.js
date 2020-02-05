@@ -19,9 +19,7 @@
 			var hideWarnings=false;
 			var connectionState=false;
 			
-			$("#btnCmd").click(function(){
-				usrCmd = $("#inputCmd").val();
-				usrID = $("#inputID").val();
+			function command(usrCmd, usrID){
 				
 				if(usrID == "$"){
 					if(usrCmd === "LEDon" || usrCmd === "LEDoff"){
@@ -74,7 +72,7 @@
 			
 			$("#btnHideWarn").click(function(){
 				hideWarnings = !hideWarnings;
-			});
+			)
 
 			
 			function sendConsoleMsg(msg, type){
